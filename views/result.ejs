@@ -1,0 +1,60 @@
+<% include partials/header %>
+
+<body>
+
+    <div class="login-wrap">
+
+        <div class="login-html">
+            <input id="tab-1" type="radio" name="tab" class="one" checked>
+            <label class="tab" style="color: #FFFFFF; margin-top:15%;" >
+                <% if( querySuccess == 'false'){ %>
+                        No such Email id exists!
+                <%  } else if( querySuccess == 'true' && message == 'DATA DELETED' ){ %>
+                        Record Deleted
+                <%  } else{ %>
+                        <%= message %>
+                <%  }  %>
+            </label> 
+
+            <label style="color: #FFFFFF; margin-top:2%; font-size:15px" >
+                <%  if( querySuccess == 'true' && message == 'DATA DELETED' ){ %>
+                    <ul>
+                        <i>Deleted id:</i> <%= id %> 
+                    </ul>
+                <% } else if( querySuccess == 'true' && message != 'DATA DELETED'){ %>
+                    <% result  = resArray %>
+                    <ul>
+                        <li class="label-radio3" for="radio1">
+                            <i>Name:</i> <%= result.userName   %>
+                        </li>
+                        <li class="label-radio3" for="radio1">
+                            <i>Email Id:</i> <%= result.emailId  %>
+                        </li>
+                        <li class="label-radio3" for="radio1">
+                            <i>Phone Number:</i> <%= result.phoneNo %>
+                        </li>
+                        <li class="label-radio3" for="radio1">
+                            <i>Password:</i> <%= result.password  %>
+                        </li>
+                        <li class="label-radio3" for="radio1">
+                            <i>Time stamp:</i> <%= TS  %>
+                        </li>
+                    </ul>
+                <% } %>
+
+            </label>
+            
+            <div class="login-form">
+                <a href="/">
+                    <div class="group">
+                        <input type="submit" class="button" value="Home">
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+<% include partials/footer %>

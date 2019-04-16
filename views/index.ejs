@@ -1,0 +1,96 @@
+<% include partials/header %>
+
+<body>
+	
+	<div class="login-wrap">
+		
+		<div class="login-html">
+			<input id="tab-1" type="radio" name="tab" class="one" checked><label for="tab-1" class="tab" >DETAILS</label>
+			<input id="tab-2" type="radio" name="tab" class="two"><label for="tab-2" class="tab" >SEARCH</label>
+			<input id="tab-3" type="radio" name="tab" class="three"><label for="tab-3" class="tab">DELETE</label>
+			
+			<div class="login-form">
+				
+				<div class="one-htm">
+					
+					<form class="" action = "http://127.0.0.1:3000/query" method = "POST">
+						
+						<div class="group">
+							<label class="label">Email Id</label>
+							<input class="input" id="auto1" type="email" name="email1" autocomplete="off" required>
+						</div>
+						
+						<div class="group">
+							<label class="label">Username</label>
+							<input type="text" class="input" name="name" required>
+						</div>
+						
+						<div class="group">
+							<label class="label">Password</label>
+							<input id="password-field" type="password" class="input" type="password" name="password" required>
+							<div class="zoom" style="text-align: center;">	
+								<i style="color: black; top: 0%; " toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password" title="Show Password"></i>
+							</div>
+						</div>
+						
+						<div class="group">
+							<label class="label">Phone Number</label>
+							<input id="pass" type="tel" pattern="[0-9]{10}" class="input" name="phno" required>
+							<div class="zoom" style="text-align: center;">
+								<i style="color: black" class="glyphicon glyphicon-question-sign" title="Enter 10 digit Number"></i>
+							</div>
+						</div>
+						
+						<div class="group">
+							<input type="submit" class="button" value="Submit">
+						</div>
+						
+					</form>
+					
+				</div>
+				
+				<div class="two-htm">
+					
+					<form class="" action = "http://127.0.0.1:3000/search" method = "POST">
+						
+						<div class="group" >
+							<label class="label">Email Id</label>
+							<input class="input" id="auto2" type="email" name="email2" autocomplete="off" required>
+						</div>
+						
+						<div class="group">
+							<input type="submit" class="button" value="Find">
+						</div>
+						
+					</form>
+				</div>
+				
+				
+				<div class="three-htm">
+					
+					<form class="" action = "http://127.0.0.1:3000/delete" method = "POST">
+						
+						<div class="group">
+							<label class="label">Email Id</label>
+							<input class="input" id="auto3" type="email" name="email3" autocomplete="off" required>
+							
+						</div>
+						
+						<div class="group contact_submit">
+							<input type="submit" class="button" value="Delete">
+						</div>
+						
+					</form>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
+
+<script src="js/main.js"></script> 
+
+<% include partials/footer %>

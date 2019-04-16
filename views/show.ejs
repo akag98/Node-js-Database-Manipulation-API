@@ -1,0 +1,103 @@
+<% include partials/header %>
+
+<body>
+
+    <div class="login-wrap">
+    
+        <div class="login-html">
+            <input id="tab-1" type="radio" name="tab" class="one" checked>
+            <label class="tab" style="color: #FFFFFF; margin-left: 0%" >
+                <% if( update == 'true'){ %>
+                    Record Updated 
+                <%  } %>
+                <% if( update == 'false'){ %>
+                    Record Inserted 
+                <%  }%>
+            </label>
+
+            <div class="login-form">
+
+                <% if( update == 'true'){ %>
+                    <label style="color: #FFFFFF; font-size:20px">
+
+                        <i>Original Record:</i>
+                        <% original  = originalArray %>
+                        <ul style="color: #FFFFFF; font-size:15px">
+                            <li class="label-radio3" for="radio1">
+                                <i>Name:</i> <%= original.userName  %>
+                            </li>
+                            <li class="label-radio3" for="radio1">
+                                <i>Email Id:</i> <%= original.emailId  %>
+                            </li>
+                            <li class="label-radio3" for="radio1">
+                                <i>Phone Number:</i> <%= original.phoneNo %>
+                            </li>
+                            <li class="label-radio3" for="radio1">
+                                <i>Password:</i> <%= original.password  %>
+                            </li>
+                            <li class="label-radio3" for="radio1">
+                                <i>Time Stamp:</i> <%= original.dateTime  %>
+                            </li>
+                        </ul>
+
+                        <i>Updated Record:</i>
+                        <% result = resArray %>
+                        <ul style="color: #FFFFFF; font-size:15px">
+                            <li class="label-radio3" for="radio1">
+                                <i>Name:</i> <%= result.name  %> 
+                            </li>
+                            <li class="label-radio3" for="radio1">
+                                <i>Email Id:</i> <%= result.email  %>
+                            </li>
+                            <li class="label-radio3" for="radio1">
+                                <i>Phone Number:</i> <%= result.phno %>
+                            </li>
+                            <li class="label-radio3" for="radio1">
+                                <i>Password:</i> <%= result.password  %>
+                            </li>
+                            <li class="label-radio3" for="radio1">
+                                <i>Time Stamp:</i> <%= result.dateTime  %> GMT+0530 (India Standard Time)
+                            </li>
+                        </ul>
+                    </label>
+                    
+                <% } else { %>
+                    <label style="color: #FFFFFF; font-size:20px;">
+                        <% result = resArray %>
+                        <ul style="color: #FFFFFF; font-size:15px">
+                            <li class="label-radio3" for="radio1">
+                                <i>Name:</i> <%= result.name  %> 
+                            </li>
+                            <li class="label-radio3" for="radio1">
+                                <i>Email Id:</i> <%= result.email  %>
+                            </li>
+                            <li class="label-radio3" for="radio1">
+                                <i>Phone Number:</i> <%= result.phno %>
+                            </li>
+                            <li class="label-radio3" for="radio1">
+                                <i>Password:</i> <%= result.password  %>
+                            </li>
+                            <li class="label-radio3" for="radio1">
+                                <i>Time Stamp:</i> <%= result.dateTime  %> GMT+0530 (India Standard Time)
+                            </li>
+                        </ul>
+                    </label>
+                <% } %>
+
+                    
+                <a href="/">
+                    <div class="group">
+                        <input type="submit" class="button" value="Home">
+                    </div>
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</body>
+
+<% include partials/footer %>
