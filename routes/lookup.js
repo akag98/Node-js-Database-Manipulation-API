@@ -5,11 +5,11 @@ var mysql = require('mysql');
 var date = new Date();
 
 var con = mysql.createConnection({
-    host: "db-intern.ciupl0p5utwk.us-east-1.rds.amazonaws.com",
+    host: "localhost",
     port: "3306", 
-    user: "dummyUser",
-    password: "dummyUser01",
-    database: "db_intern"
+    user: "root",
+    password: "my_password",
+    database: "db_name"
 });
 
 con.connect(function(err) {
